@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevAgency Pro — IT-аутсорсинг для вашего бизнеса</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='90' font-weight='bold' fill='%230a2647'>D</text></svg>">
+</head>
+<body>
+  <!-- НАВИГАЦИЯ -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <div class="container">
+      <a class="navbar-brand" href="#" style="font-weight: bold; color: #0a2647; font-size: 1.5rem;">
+        <i class="fas fa-code"></i> DevAgency Pro
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#services">Услуги</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Кейсы</a></li>
+          <li class="nav-item"><a class="nav-link" href="#calculator">Калькулятор</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">Команда</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Контакты</a></li>
+          <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-2" href="#form">Заявка</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- СЕКЦИЯ 1: HERO -->
+  <section class="hero" style="background: linear-gradient(135deg, #0a2647 0%, #144272 100%); color: white; padding: 100px 0; text-align: center;">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-3">Профессиональный IT-аутсорсинг для бизнеса</h1>
+      <p class="lead mb-4">Разработка, поддержка и масштабирование ваших digital-проектов</p>
+      <a href="#form" class="btn btn-primary btn-lg me-2">Бесплатная консультация</a>
+      <a href="#services" class="btn btn-outline-light btn-lg">Узнать больше</a>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ 2: УСЛУГИ -->
+  <section id="services" class="py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+      <h2 class="text-center mb-5" style="color: #0a2647;">Наши IT-услуги</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm" style="border-top: 4px solid #144272;">
+            <div class="card-body text-center">
+              <i class="fas fa-code fa-3x mb-3" style="color: #144272;"></i>
+              <h5 class="card-title">Веб-разработка</h5>
+              <p class="card-text small">Сайты, веб-приложения, CRM системы на современных технологиях</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm" style="border-top: 4px solid #144272;">
+            <div class="card-body text-center">
+              <i class="fas fa-mobile-alt fa-3x mb-3" style="color: #144272;"></i>
+              <h5 class="card-title">Мобильная разработка</h5>
+              <p class="card-text small">iOS, Android, кроссплатформенные приложения с высокой производительностью</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm" style="border-top: 4px solid #144272;">
+            <div class="card-body text-center">
+              <i class="fas fa-headset fa-3x mb-3" style="color: #144272;"></i>
+              <h5 class="card-title">Техническая поддержка</h5>
+              <p class="card-text small">24/7 мониторинг, обновления, обновления безопасности и масштабирование</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm" style="border-top: 4px solid #144272;">
+            <div class="card-body text-center">
+              <i class="fas fa-cloud fa-3x mb-3" style="color: #144272;"></i>
+              <h5 class="card-title">Cloud решения</h5>
+              <p class="card-text small">Миграция в облако, оптимизация инфраструктуры, DevOps сервисы</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ 3: КЕЙСЫ (ПОРТФОЛИО) -->
+  <section id="portfolio" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5" style="color: #0a2647;">Наши проекты</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div style="background: linear-gradient(135deg, #144272 0%, #0a2647 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Интернет-магазин для ритейла</h5>
+              <p class="card-text small text-muted">+30% к конверсии</p>
+              <p class="card-text small">Запуск за 2 месяца, интеграция с 1C, система управления складом</p>
+              <a href="#" class="btn btn-sm btn-outline-primary">Подробнее</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div style="background: linear-gradient(135deg, #144272 0%, #0a2647 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Мобильное приложение для стартапа</h5>
+              <p class="card-text small text-muted">50K+ скачиваний, рейтинг 4.8★</p>
+              <p class="card-text small">iOS и Android версии, реал-тайм синхронизация, push-уведомления</p>
+              <a href="#" class="btn btn-sm btn-outline-primary">Подробнее</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div style="background: linear-gradient(135deg, #144272 0%, #0a2647 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">
+              <i class="fas fa-building"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Корпоративный портал</h5>
+              <p class="card-text small text-muted">Автоматизация 80% процессов</p>
+              <p class="card-text small">Управление документами, HR-система, CRM интеграция для 500+ сотрудников</p>
+              <a href="#" class="btn btn-sm btn-outline-primary">Подробнее</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ 4: КАЛЬКУЛЯТОР СТОИМОСТИ -->
+  <section id="calculator" class="py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+      <h2 class="text-center mb-5" style="color: #0a2647;">Калькулятор стоимости проекта</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-sm p-4">
+            <form id="calculator-form">
+              <div class="mb-4">
+                <label class="form-label fw-bold">Выберите услугу:</label>
+                <select id="service" class="form-select form-select-lg" required>
+                  <option value="">-- Выберите услугу --</option>
+                  <option value="web">Веб-разработка</option>
+                  <option value="mobile">Мобильная разработка</option>
+                  <option value="support">Техническая поддержка</option>
+                  <option value="cloud">Cloud решения</option>
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label fw-bold">Сроки реализации:</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="timeline1" name="timeline" value="short" required>
+                  <label class="form-check-label" for="timeline1">1-3 месяца</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="timeline2" name="timeline" value="medium">
+                  <label class="form-check-label" for="timeline2">3-6 месяцев</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="timeline3" name="timeline" value="long">
+                  <label class="form-check-label" for="timeline3">6+ месяцев</label>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label fw-bold">Сложность проекта:</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="complexity1" name="complexity" value="basic" required>
+                  <label class="form-check-label" for="complexity1">Базовая</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="complexity2" name="complexity" value="standard">
+                  <label class="form-check-label" for="complexity2">Стандартная</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="complexity3" name="complexity" value="complex">
+                  <label class="form-check-label" for="complexity3">Сложная</label>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-lg w-100" onclick="calculateCost()">Рассчитать стоимость</button>
+            </form>
+
+            <div id="calculator-result" style="display: none; margin-top: 30px; padding: 20px; background-color: #e8f4f8; border-left: 4px solid #144272; border-radius: 4px;">
+              <h5 style="color: #0a2647;">Примерная стоимость проекта:</h5>
+              <p style="font-size: 28px; font-weight: bold; color: #144272; margin: 10px 0;">
+                <span id="cost-value">--</span> руб.
+              </p>
+              <p class="small text-muted">Это предварительная оценка. Точная стоимость будет определена после детального анализа требований.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ 5: КОМАНДА -->
+  <section id="team" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5" style="color: #0a2647;">Наша команда экспертов</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card border-0 shadow-sm text-center h-100">
+            <div style="background: linear-gradient(135deg, #144272 0%, #0a2647 100%); height: 150px; display: flex; align-items: center; justify-content: center; font-size: 60px; color: white;">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Frontend разработчик</h5>
+              <p class="card-text small text-muted">React, Vue.js, TypeScript</p>
+              <p class="card-text small">5+ лет опыта, 50+ успешных проектов</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card border-0 shadow-sm text-center h-100">
+            <div style="background: linear-gradient(135deg, #144272 0%, #0a2647 100%); height: 150px; display: flex; align-items: center; justify-content: center; font-size: 60px; color: white;">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Backend разработчик</h5>
+              <p class="card-text small text-muted">Node.js, Python, PostgreSQL</p>
+              <p class="card-text small">7+ лет опыта, архитектор высоконагруженных систем</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card border-0 shadow-sm text-center h-100">
+            <div style="background: linear-gradient(135deg, #144272 0%, #0a2647 100%); height: 150px; display: flex; align-items: center; justify-content: center; font-size: 60px; color: white;">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Mobile разработчик</h5>
+              <p class="card-text small text-muted">Swift, Kotlin, Flutter</p>
+              <p class="card-text small">6+ лет опыта, 30+ приложений в App Store</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card border-0 shadow-sm text-center h-100">
+            <div style="background: linear-gradient(135deg, #144272 0%, #0a2647 100%); height: 150px; display: flex; align-items: center; justify-content: center; font-size: 60px; color: white;">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">DevOps инженер</h5>
+              <p class="card-text small text-muted">AWS, Docker, Kubernetes</p>
+              <p class="card-text small">8+ лет опыта, управление инфраструктурой для 100+ приложений</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ 6: ОТЗЫВЫ -->
+  <section class="py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+      <h2 class="text-center mb-5" style="color: #0a2647;">Отзывы клиентов</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <div class="mb-2">
+                <i class="fas fa-star" style="color: #ffc107;"></i>
+                <i class="fas fa-star" style="color: #ffc107;"></i>
+                <i class="fas fa-star" style="color: #ffc107;"></i>
+                <i class="fas fa-star" style="color: #ffc107;"></i>
+                <i class="fas fa-star" style="color: #ffc107;"></i>
+              </div>
+              <p class="card-text">"DevAgency Pro помогли нам запустить нашу платформу за 3 месяца. Отличная команда, высокое качество кода и постоянная поддержка."</p>
+              <p class="fw-bold small mb-0">Иван Петров</p>
+              <p class="small text-muted">CEO, TechStartup</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <div class="mb-2">
+                <i class="fas fa-star" style="color: #ffc107;"></i>
+                <i class="fas fa-star" style="color: #ffc107;"></i>
+                <i class="fas fa-star" style="color: #ffc107;"></i>
+                <i class="fas fa-star" style="color: #ffc107;"></i>
+                <i class="fas fa-star" style="color: #ffc107;"></i>
+              </div>
+              <p class="card-text">"Переходили на облачные решения с помощью DevAgency Pro. Результат — 40% снижение затрат на инфраструктуру и увеличение производительности."</p>
+              <p class="fw-bold small mb-0">Мария Сидорова</p>
+              <p class="small text-muted">CTO, E-commerce Inc</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <div class="mb-2">
+                <i class="fas fa-star" style="color: #ffc107;"></i>
+                <i class="fas fa-star" style="color: #ffc107;"></i>
+                <i class="fas fa-star" style="color: #ffc107;"></i>
+                <i class="fas fa-star" style="color: #ffc107;"></i>
+                <i class="fas fa-star" style="color: #ffc107;"></i>
+              </div>
+              <p class="card-text">"Поддержка мобильного приложения, которое мы запустили с DevAgency Pro — 24/7 мониторинг и быстрые обновления. Просто супер!"</p>
+              <p class="fw-bold small mb-0">Алексей Иванов</p>
+              <p class="small text-muted">Product Manager, MobileApp Co</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ 7: ФОРМА ЗАЯВКИ -->
+  <section id="form" class="py-5" style="background: linear-gradient(135deg, #0a2647 0%, #144272 100%); color: white;">
+    <div class="container">
+      <h2 class="text-center mb-5">Начните проект сегодня!</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <form id="application-form" novalidate>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label" for="form-name">Ваше имя</label>
+                <input type="text" class="form-control form-control-lg" id="form-name" name="name" placeholder="Иван Петров" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="form-email">Email</label>
+                <input type="email" class="form-control form-control-lg" id="form-email" name="email" placeholder="ivan@example.com" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="form-phone">Телефон</label>
+              <input type="tel" class="form-control form-control-lg" id="form-phone" name="phone" placeholder="+7 (999) 000-00-00" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="form-service">Услуга</label>
+              <select class="form-select form-select-lg" id="form-service" name="service" required>
+                <option value="">-- Выберите услугу --</option>
+                <option value="web">Веб-разработка</option>
+                <option value="mobile">Мобильная разработка</option>
+                <option value="support">Техническая поддержка</option>
+                <option value="cloud">Cloud решения</option>
+                <option value="consultation">Консультация</option>
+              </select>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label" for="form-description">Описание проекта</label>
+              <textarea class="form-control form-control-lg" id="form-description" name="message" rows="5" placeholder="Расскажите о вашем проекте и требованиях..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg w-100" id="submit-btn">Отправить заявку</button>
+            <div id="form-message" style="margin-top: 10px; text-align: center;"></div>
+          </form>
+          <p class="text-center small mt-3" style="opacity: 0.8;">💡 Ваши данные обрабатываются безопасно и не передаются третьим лицам.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЕКЦИЯ 8: КОНТАКТЫ -->
+  <section id="contact" class="py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+      <h2 class="text-center mb-5" style="color: #0a2647;">Свяжитесь с нами</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="text-center">
+            <i class="fas fa-map-marker-alt fa-2x mb-3" style="color: #144272;"></i>
+            <h5>Адрес</h5>
+            <p class="text-muted">Москва, ул. Московская, д. 1<br>офис 100</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text-center">
+            <i class="fas fa-phone fa-2x mb-3" style="color: #144272;"></i>
+            <h5>Телефон</h5>
+            <p class="text-muted"><a href="tel:+79999999999" class="text-decoration-none">+7 (999) 999-99-99</a></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text-center">
+            <i class="fas fa-envelope fa-2x mb-3" style="color: #144272;"></i>
+            <h5>Email</h5>
+            <p class="text-muted"><a href="mailto:info@devagency.pro" class="text-decoration-none">info@devagency.pro</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-12 text-center">
+          <h5 class="mb-3">Следите за нами в социальных сетях:</h5>
+          <a href="#" class="btn btn-outline-primary me-2"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="btn btn-outline-primary me-2"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="btn btn-outline-primary me-2"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="btn btn-outline-primary"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background-color: #0a2647; color: white; padding: 40px 0; text-align: center;">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <h6 class="mb-3"><i class="fas fa-code"></i> DevAgency Pro</h6>
+          <p class="small">Ваш партнер в IT-решениях</p>
+        </div>
+        <div class="col-md-4">
+          <h6 class="mb-3">Меню</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#services" class="text-white-50 text-decoration-none">Услуги</a></li>
+            <li><a href="#portfolio" class="text-white-50 text-decoration-none">Кейсы</a></li>
+            <li><a href="#team" class="text-white-50 text-decoration-none">Команда</a></li>
+            <li><a href="#contact" class="text-white-50 text-decoration-none">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="mb-3">Услуги</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white-50 text-decoration-none">Веб-разработка</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Мобильная разработка</a></li>
+            <li><a href="#" class="text-white-50 text-decoration-none">Техническая поддержка</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr style="border-color: rgba(255,255,255,0.2);">
+      <p class="small mb-0">© 2024 DevAgency Pro. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

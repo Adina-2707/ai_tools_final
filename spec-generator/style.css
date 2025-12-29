@@ -1,0 +1,271 @@
+/* Сброс стилей и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #333333;
+    --accent-color: #0a2647;
+    --button-color: #144272;
+    --card-bg: #ffffff;
+    --border-color: #e9ecef;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Глобальные стили для секций */
+section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Стили карточек услуг */
+.services-card {
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.services-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Стили карточек портфолио */
+.portfolio-card {
+    transition: all 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Калькулятор */
+.calculator-form {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.calculator-form .form-label {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #0a2647;
+}
+
+.calculator-form .form-select,
+.calculator-form .form-check-input {
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.calculator-form .form-select:focus,
+.calculator-form .form-check-input:focus {
+    border-color: #144272;
+    box-shadow: 0 0 0 0.2rem rgba(20, 66, 114, 0.1);
+}
+
+#calculator-result {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Команда */
+.team-card {
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Отзывы */
+.testimonial-card {
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.fa-star {
+    margin-right: 0.25rem;
+}
+
+/* Форма заявки */
+.application-form {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.application-form .form-label {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+.application-form .form-control,
+.application-form .form-select {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: all 0.3s ease;
+}
+
+.application-form .form-control:focus,
+.application-form .form-select:focus {
+    border-color: white;
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.2);
+    background-color: white;
+}
+
+#form-message {
+    font-weight: 600;
+    padding: 0.75rem;
+    border-radius: 4px;
+    display: none;
+    margin-top: 1rem;
+}
+
+#form-message.success {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#form-message.error {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Dark theme variables and overrides */
+[data-theme="dark"] {
+    --bg-color: #0a2647;
+    --text-color: #ffffff;
+    --card-bg: #144272;
+    --accent-color: #2c74b3;
+    --border-color: #205295;
+}
+
+[data-theme="dark"] body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] p,
+[data-theme="dark"] label,
+[data-theme="dark"] .form-label {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] section {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] section[style*="background-color: #f8f9fa"] {
+    background-color: #0f3460 !important;
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] textarea {
+    background-color: #0f3460;
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus,
+[data-theme="dark"] textarea:focus {
+    background-color: #0f3460;
+    color: var(--text-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(44, 116, 179, 0.2);
+}
+
+[data-theme="dark"] footer {
+    background-color: #051826;
+}
+
+[data-theme="dark"] .text-muted {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .calculator-form {
+        padding: 1.5rem;
+    }
+
+    .application-form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .calculator-form,
+    .application-form {
+        padding: 1rem;
+    }
+}
