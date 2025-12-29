@@ -21,60 +21,7 @@ const FORMSPREE_FORM_ID = null; // Замените на 'fXXXXXXXX' для ак
 /**
  * Базовые стоимости услуг (в тысячах рублей)
  */
-const baseCosts = {
-    web: 500,      // Веб-разработка
-    mobile: 700,   // Мобильная разработка
-    support: 150,  // Техническая поддержка (месячная)
-    cloud: 300     // Cloud решения
-};
-
-/**
- * Множители для сроков реализации
- */
-const timelineMultipliers = {
-    short: 0.8,    // 1-3 месяца (быстро = дороже)
-    medium: 1.0,   // 3-6 месяцев (нормально)
-    long: 1.3      // 6+ месяцев (долго = дешевле)
-};
-
-/**
- * Множители для сложности проекта
- */
-const complexityMultipliers = {
-    basic: 1.0,      // Базовая
-    standard: 1.5,   // Стандартная
-    complex: 2.2     // Сложная
-};
-
-/**
- * Рассчитывает стоимость проекта на основе выбранных параметров
- */
-function calculateCost() {
-    const service = document.getElementById('service').value;
-    const timeline = document.querySelector('input[name="timeline"]:checked')?.value;
-    const complexity = document.querySelector('input[name="complexity"]:checked')?.value;
-    const resultDiv = document.getElementById('calculator-result');
-
-    // Валидация
-    if (!service || !timeline || !complexity) {
-        alert('Пожалуйста, заполните все поля калькулятора');
-        return;
-    }
-
-    // Расчёт
-    const baseCost = baseCosts[service] || 0;
-    const timelineMultiplier = timelineMultipliers[timeline] || 1;
-    const complexityMultiplier = complexityMultipliers[complexity] || 1;
-
-    const totalCost = Math.round(baseCost * timelineMultiplier * complexityMultiplier);
-
-    // Вывод результата
-    document.getElementById('cost-value').textContent = totalCost.toLocaleString('ru-RU');
-    resultDiv.style.display = 'block';
-
-    // Плавная прокрутка к результату
-    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
+// (Устаревший базовый калькулятор удалён — заменён на локальные цены в сомах ниже)
 /**
  * БАЗОВЫЕ СТОИМОСТИ УСЛУГ (в сомах Кыргызстана, 2024)
  * Анализ рынка IT-аутсорсинга основан на данных:
