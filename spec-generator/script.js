@@ -75,6 +75,169 @@ function calculateCost() {
     // Плавная прокрутка к результату
     resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
+/**
+ * БАЗОВЫЕ СТОИМОСТИ УСЛУГ (в сомах Кыргызстана, 2024)
+ * Анализ рынка IT-аутсорсинга основан на данных:
+ * - Средние ставки разработчиков в КР
+ * - Курс USD/KGS: 89 сом за доллар
+ * - Конкурентный анализ с соседними странами
+ * - Налоговые льготы для IT-компаний КР
+ */
+const baseCosts = {
+    landing: 75000,      // Лендинг (5-10 страниц)
+    website: 250000,     // Корпоративный сайт (10-20 страниц)
+    eshop: 550000,       // Интернет-магазин
+    webapp: 900000,      // Веб-приложение (CRM/ERP)
+    mobile: 350000,      // Мобильное приложение (1 платформа)
+    support_basic: 20000, // Техподдержка базовая (5 ч/мес)
+    support_standard: 75000, // Техподдержка стандартная (20 ч/мес)
+    support_full: 225000    // Полное сопровождение (40+ ч/мес)
+};
+
+/**
+ * МНОЖИТЕЛИ для сроков реализации
+ * short: 1-3 месяца (быстрое выполнение требует наценки)
+ * medium: 3-6 месяцев (стандартный срок, базовая цена)
+ * long: 6+ месяцев (длинные проекты позволяют скидку)
+ */
+const timelineMultipliers = {
+    short: 1.3,    // 1-3 месяца: срочное выполнение +30%
+    medium: 1.0,   // 3-6 месяцев: стандартно
+    long: 0.85     // 6+ месяцев: скидка 15% за долгосрочное сотрудничество
+};
+
+/**
+ * МНОЖИТЕЛИ для сложности проекта
+ * Базовая: готовые решения, типовой дизайн
+ * Стандартная: уникальный дизайн, интеграции, средняя логика
+ * Высокая: сложная анимация, кастомные решения, API интеграции
+ * Enterprise: микросервисы, нагруженные системы, высокие требования безопасности
+ */
+const complexityMultipliers = {
+    basic: 1.0,      // Базовая сложность
+    standard: 1.3,   // Стандартная сложность
+    complex: 1.7,    // Высокая сложность
+    enterprise: 2.5  // Enterprise уровень
+};
+
+/**
+ * ДОПОЛНИТЕЛЬНЫЕ ОПЦИИ (в сомах)
+ * Надбавки за дополнительный функционал
+ */
+const additionalOptions = {
+    responsive: 0.20,        // Адаптивный дизайн: +20% от базовой стоимости
+    admin_panel: 50000,      // Админ-панель: +50,000 сом
+    payment_integration: 45000, // Интеграция с платежными системами: +45,000 сом
+    seo: 30000,              // SEO оптимизация: +30,000 сом
+    qa_testing: 0.15,        // QA/Тестирование: +15% от базовой стоимости
+    analytics: 20000         // Аналитика и отслеживание: +20,000 сом
+};
+
+/**
+ * Конвертирует цену в сомах в доллары для отображения
+ * Курс: 89 сом = 1 USD
+ */
+function convertToUSD(priceInSom) {
+    const exchangeRate = 89;
+    return Math.round(priceInSom / exchangeRate);
+}
+
+/**
+ * Форматирует число с пробелами для удобства чтения
+ * Примеры: 50000 → "50 000", 1500000 → "1 500 000"
+ */
+function formatNumber(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+}
+
+/**
+ * ГЛАВНАЯ ФУНКЦИЯ: Рассчитывает стоимость IT-проекта в Кыргызстане
+ * Учитывает:
+ * - Тип услуги
+ * - Сроки реализации
+ * - Сложность проекта
+ * - Дополнительные опции
+ * 
+ * Формула: (БАЗОВАЯ_СТОИМОСТЬ × МНОЖИТЕЛЬ_СЛОЖНОСТИ × МНОЖИТЕЛЬ_СРОКА) + ДОП.ОПЦИИ
+ */
+function calculateCost() {
+    const service = document.getElementById('service').value;
+    const timeline = document.querySelector('input[name="timeline"]:checked')?.value;
+    const complexity = document.querySelector('input[name="complexity"]:checked')?.value;
+    const resultDiv = document.getElementById('calculator-result');
+
+    // Валидация
+    if (!service || !timeline || !complexity) {
+        alert('Пожалуйста, заполните все поля калькулятора');
+        return;
+    }
+
+    // Получаем базовую стоимость
+    const baseCost = baseCosts[service] || 0;
+    if (baseCost === 0) {
+        alert('Ошибка: услуга не найдена');
+        return;
+    }
+
+    // Получаем множители
+    const timelineMultiplier = timelineMultipliers[timeline] || 1;
+    const complexityMultiplier = complexityMultipliers[complexity] || 1;
+
+    // Основной расчёт
+    const costBeforeOptions = baseCost * complexityMultiplier * timelineMultiplier;
+
+    // Добавляем дополнительные опции (если были отмечены)
+    let additionalCost = 0;
+    let selectedOptions = [];
+    
+    // Проверяем дополнительные опции в форме (если они есть)
+    const checkboxes = document.querySelectorAll('input[name="additional-options"]:checked');
+    checkboxes.forEach(checkbox => {
+        const optionKey = checkbox.value;
+        if (additionalOptions[optionKey] !== undefined) {
+            const optionValue = additionalOptions[optionKey];
+            // Если это процент (значение < 1), применяем к базовой стоимости
+            if (optionValue < 1) {
+                additionalCost += baseCost * optionValue;
+            } else {
+                additionalCost += optionValue;
+            }
+            selectedOptions.push(checkbox.getAttribute('data-label') || optionKey);
+        }
+    });
+
+    // Итоговая цена
+    const totalCostSom = Math.round(costBeforeOptions + additionalCost);
+    const totalCostUSD = convertToUSD(totalCostSom);
+
+    // Формируем вывод результата
+    const resultText = `
+        от ${formatNumber(totalCostSom)} сом<br>
+        (≈ ${totalCostUSD.toLocaleString('ru-RU')} USD)
+    `;
+    
+    document.getElementById('cost-value').innerHTML = resultText;
+    
+    // Добавляем детализацию расчета (опционально)
+    const detailsDiv = document.getElementById('calculator-details');
+    if (detailsDiv) {
+        const details = `
+            <p style="font-size: 0.9em; color: #666;">
+                <strong>Детализация:</strong><br>
+                Базовая стоимость: ${formatNumber(baseCost)} сом<br>
+                Сложность: ×${complexityMultiplier} | Срок: ×${timelineMultiplier}<br>
+                ${selectedOptions.length > 0 ? `Опции: ${selectedOptions.join(', ')}<br>` : ''}
+                <em style="color: #999;">Цена ориентировочная. Точный расчет при личной консультации.</em>
+            </p>
+        `;
+        detailsDiv.innerHTML = details;
+    }
+
+    resultDiv.style.display = 'block';
+
+    // Плавная прокрутка к результату
+    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
 
 // ==================== ОБРАБОТКА ФОРМЫ ЗАЯВКИ ====================
 
